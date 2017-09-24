@@ -88,8 +88,7 @@ void GNB::train(vector<vector<double> > data, vector<string> labels)
     {
         for(int j=0; j<N_features; j++)
         {
-            double tmp = this->std[i][j];
-            this->std[i][j] = sqrt(tmp / count_label[i]);
+            this->std[i][j] = sqrt(this->std[i][j] / count_label[i]);
         }
     }
 
