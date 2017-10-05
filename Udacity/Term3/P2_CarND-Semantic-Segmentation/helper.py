@@ -9,6 +9,7 @@ import time
 import tensorflow as tf
 from glob import glob
 from urllib.request import urlretrieve
+from moviepy.editor import VideoFileClip
 from tqdm import tqdm
 
 
@@ -116,7 +117,7 @@ def gen_test_output(sess, logits, keep_prob, image_pl, data_folder, image_shape)
             [tf.nn.softmax(logits)],
             {keep_prob: 1.0, image_pl: [image]})
         im_softmax = im_softmax[0][:, 1].reshape(image_shape[0], image_shape[1])
-        segmentation = (im_softmax < 0.5).reshape(image_shape[0], image_shape[1], 1)
+        segmentation = (im_softmax > 0.5).reshape(image_shape[0], image_shape[1], 1)
         mask = np.dot(segmentation, np.array([[0, 255, 0, 127]]))
         mask = scipy.misc.toimage(mask, mode="RGBA")
         street_im = scipy.misc.toimage(image)
@@ -138,6 +139,37 @@ def save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_p
         sess, logits, keep_prob, input_image, os.path.join(data_dir, 'data_road/testing'), image_shape)
     for name, image in image_outputs:
         scipy.misc.imsave(os.path.join(output_dir, name), image)
+
+def gen_movie_output(sess, logits, keep_prob, image_pl, vedio_path, vedio_output, image_shape):
+    """
+    Generate test output using the test images
+    :param sess: TF session
+    :param logits: TF Tensor for the logits
+    :param keep_prob: TF Placeholder for the dropout keep robability
+    :param image_pl: TF Placeholder for the image placeholder
+    :param image_shape: Tuple - Shape of image
+    :return: Output for for each test image
+    """
+    def image_func(image):
+
+        image = scipy.misc.imresize(image, image_shape)
+        im_softmax = sess.run(
+            [tf.nn.softmax(logits)],
+            {keep_prob: 1.0, image_pl: [image]})
+        im_softmax = im_softmax[0][:, 1].reshape(image_shape[0], image_shape[1])
+        segmentation = (im_softmax > 0.5).reshape(image_shape[0], image_shape[1], 1)
+        mask = np.dot(segmentation, np.array([[0, 255, 0, 127]]))
+
+        mask = scipy.misc.toimage(mask)
+        street_im = scipy.misc.toimage(image)
+        street_im.paste(mask, box=None, mask=mask)
+
+        return street_im      
+
+    clips = VideoFileClip(vedio_path)
+    myclips = clips.subclip(115, 123)  # (start, end)
+    myclips.fl_image(image_func)   
+    myclips.write_videofile(vedio_output, fps=15)
 
 #定义一个函数，用于初始化所有的权值 W
 def weight_variable(shape):
