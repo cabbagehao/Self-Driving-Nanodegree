@@ -1,8 +1,9 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
+![40公里时速控制](./imgs/pid_40_finish.png)
+*使用了pid去控制车辆。 目前能达到40km的时速，但控制得并不太稳定，不能平稳地行驶。
+时间关系暂时不再优化，以后有空再提高稳定性和时速。2017/11/01.*
 
-使用了pid去控制车辆。 目前能达到40km的时速，但控制得并不太稳定，不能平稳地行驶。
-时间关系暂时不再优化，以后有空再提高稳定性和时速。2017/11/01.
 ---
 
 ## Dependencies
