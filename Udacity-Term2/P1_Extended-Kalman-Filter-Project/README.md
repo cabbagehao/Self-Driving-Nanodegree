@@ -1,11 +1,18 @@
 # Extended Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
+使用扩展的卡尔曼滤波器对激光雷达和毫米波雷达数据的融合处理，以更精确地预测目标状态。
 
 ![text](./data/extend_kalman.png)  
 
-*扩展卡尔曼滤波器，就是扩展增加了对lidar和radar的分别处理。*   
-project内容是完成代码，并使得预测的误差与实际雷达数据误差在0.6以下.  
-实际上predict部分都是一样的，只是update部分需要对lidar和radar单独处理。 因为2者的数据类型与含义是不一样的。   
+*扩展卡尔曼滤波器，由于radar数据的特殊性，需要单独处理，因此叫做扩展的卡尔曼。*   
+project目标是根据lidar和radar的传感器数据用kalman滤波器进行预测， 使得预测的结果与实际轨迹误差在0.6以下. 
+![text](./data/kalman.png)  
+![text](./data/kalman2.png)  
+
+对于lidar和radar的处理，实际上predict部分都是一样的，只是update部分需要对lidar和radar单独处理。 
+lidar只包含坐标值(px, py), 目标状态为(px, py, vx, vy)， 速度可以通过距离的变化进行估计。
+radar包含(ρ φ v),由于是极坐标值，要转换到目标状态(px, py, vx, vy)，这个转换过程函数是非线性的，因此为了继续使用卡尔曼滤波，对状态转换函数进行了多变量泰勒展开，于是得到雅可比矩阵，作为radar的状态转换函数。
+![text](./data/linear_approximation.png)  
 
 
 In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
