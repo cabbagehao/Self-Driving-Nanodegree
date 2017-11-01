@@ -7,5 +7,10 @@ twiddle结果：  
 ![twiddle](./imgs/pid_control.png)  
 
 手动设定参数结果:  
-![手动设定参数结果](./imgs/pid_control.png)
+![手动设定参数结果](./imgs/pid_control.png)  
+
+PID组合对比：  
+![手动设定参数结果](./imgs/pid_compare.png)  
+
+
 
