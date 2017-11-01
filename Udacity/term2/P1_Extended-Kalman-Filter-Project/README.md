@@ -1,6 +1,13 @@
 # Extended Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
 
+![text](./data/extend_kalman.png)  
+
+*扩展卡尔曼滤波器，就是扩展增加了对lidar和radar的分别处理。*
+project内容是完成代码，并使得预测的误差与实际雷达数据误差在0.6以下.  
+实际上predict部分都是一样的，只是update部分需要对lidar和radar单独处理。 因为2者的数据类型与含义是不一样的。
+
+
 In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
 
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
