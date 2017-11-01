@@ -4,7 +4,7 @@ pid_control: 使用手动设定的PID参数去控制机器人的路径，让其�
 twiddle.py:  使用了twiddle程序去自动寻找最佳参数。  
 
 twiddle结果：  
-![twiddle](./imgs/pid_control.png)  
+[twiddle](./imgs/pid_control.png)  
 
 手动设定参数结果:  
 ![手动设定参数结果](./imgs/pid_control.png)
