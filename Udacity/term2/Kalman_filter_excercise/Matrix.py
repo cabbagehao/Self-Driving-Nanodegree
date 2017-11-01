@@ -1,6 +1,7 @@
 from math import *
-
-# This class write by udacity.
+"""
+    自定义的一个矩阵类 write by udacity.
+"""
 class matrix:
     
     # implements basic operations of a matrix class
