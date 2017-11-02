@@ -13,8 +13,6 @@ Self-Driving Car Engineer Nanodegree Program
     
     ipopt获得最优结果这里目前算是个黑盒，没有细研究。  
 ---  
-* make >= 4.1
-  * Linux
 ### 代码流程：  
 * 从模拟器里获得一组路径坐标，转换为车辆坐标系后进行多项式拟合。  
 * 计算当前车辆在多项式斜率的夹角。（车辆坐标系下当前车辆方向为0，夹角实际就是atan斜率)  
