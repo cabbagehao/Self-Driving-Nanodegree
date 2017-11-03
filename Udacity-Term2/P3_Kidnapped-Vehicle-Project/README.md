@@ -1,9 +1,12 @@
 
-Particle Filter实现的车辆定位。 
-![tt](./data/particle_filter.mp4)
-![tt](./data/particle_filter.png)
-可以看到通过particle定位的精度是很高的。 需要带landmark的高精地图。
-原理也挺有意思： 我不知道我在哪，那就随机假设，通过测量一些标志判断哪些假设是对的。
+## Particle Filter实现的车辆定位。 
+
+![video](./data/particle_filter.mp4) 
+
+![tt](./data/particle_filter.png)  
+
+可以看到通过particle定位的精度是很高的。 需要带landmark的高精地图。  
+原理也挺有意思： 我不知道我在哪，那就随机假设，通过测量一些标志判断哪些假设是对的。  
 
 # Overview
 This repository contains all the code needed to complete the final project for the Localization course in Udacity's Self-Driving Car Nanodegree.
