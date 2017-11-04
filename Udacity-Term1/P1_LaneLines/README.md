@@ -4,7 +4,7 @@
 视频测试结果：  
 <img src="test_images_output/screenshot_.png" alt="Combined Image" />
 <img src="test_images_output/screenshot_1.png" alt="Combined Image" />
-
+<img src="test_images_output/screenshot_2.png" alt="Combined Image" />
   
     1. 对图像使用canny提取边缘后，圈出一定区域内的边缘线段  
     2. 然后使用霍夫曼变换连接成直线并画在原图像上  
