@@ -6,20 +6,20 @@
 <img src="test_images_output/screenshot_1.png" width="480" alt="Combined Image" />
 
   
-    * 1. 对图像使用canny提取边缘后，圈出一定区域内的边缘线段  
-    * 2. 然后使用霍夫曼变换连接成直线并画在原图像上  
-    * 3. 为使检测到的车道线更平滑，将`HoughLinesP`函数得到直线分组，斜率正负的各一组，得到边界上的2点，连成直线并扩展到图片边界。 这样做能使车道线斜率更能吻合。   
-    * 4. 然后将图片恢复成视频输出。    
+    1. 对图像使用canny提取边缘后，圈出一定区域内的边缘线段  
+    2. 然后使用霍夫曼变换连接成直线并画在原图像上  
+    3. 为使检测到的车道线更平滑，将`HoughLinesP`函数得到直线分组，斜率正负的各一组，得到边界上的2点，连成直线并扩展到图片边界。 这样做能使车道线斜率更能吻合。   
+    4. 然后将图片恢复成视频输出。    
   
-详细步骤：  
-    1. 图像灰度处理，`cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)`  
-    2. 然后canny函数得到边缘线段`cv2.Canny(img, low_threshold, high_threshold)`  
-    3. 加一个高斯滤波`cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)`  
-    4. 圈出一个区域，以排除干扰结果`cv2.fillPoly(mask, vertices, ignore_mask_color)`  
-    5. 在区域内应用霍夫变换得到一组直线`cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)`  
+#### 详细步骤：  
+   *  1. 图像灰度处理，`cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)`  
+   *  2. 然后canny函数得到边缘线段`cv2.Canny(img, low_threshold, high_threshold)`  
+   *  3. 加一个高斯滤波`cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)`  
+   *  4. 圈出一个区域，以排除干扰结果`cv2.fillPoly(mask, vertices, ignore_mask_color)`  
+   *  5. 在区域内应用霍夫变换得到一组直线`cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)`  
     6. 对直线进行处理，留下2条直线分别就是左右车道线。  
 
-TODO：  
+#### TODO：  
     1. Challenge视频里的阴影部分需要处理    
     2. 目前只能检测直线，需要能够适配弯道  
 
