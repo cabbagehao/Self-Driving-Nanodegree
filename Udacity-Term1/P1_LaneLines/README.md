@@ -2,8 +2,8 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)  
 ### 车道线检测项目
 视频测试结果：  
-<img src="test_images_output/screenshot_.png" width="480" alt="Combined Image" />
-<img src="test_images_output/screenshot_1.png" width="480" alt="Combined Image" />
+<img src="test_images_output/screenshot_.png" alt="Combined Image" />
+<img src="test_images_output/screenshot_1.png" alt="Combined Image" />
 
   
     1. 对图像使用canny提取边缘后，圈出一定区域内的边缘线段  
