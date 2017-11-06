@@ -51,10 +51,10 @@ self.gradients:
 ```
 **Add/Mul**:  
 >执行加法/乘法的节点，仅测试时会用这些简单节点。  
-    ```python
+```python
         `forward()`：   执行乘法或者加法，存入self.value.  
         `backward()`:   pass. 不需要。  
-    ```
+```
 **Linear**:    
 >执行线性运算的节点，类似于全连接层节点    
 ```python
