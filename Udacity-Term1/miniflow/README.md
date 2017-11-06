@@ -34,14 +34,14 @@ self.gradients:
 
 **Node**:  
 > 定义了一个基类`Node`，包含4个变量和2个函数：  
->定义了一个基类`Node`，包含4个变量和2个函数： 
-        >> `inbound_nodes`   前一层所有节点  
-        >> `outbound_nodes`  后一层所有节点  
-        >> `value`           当前节点计算的值  
-        >> `gradients`       前一层每个节点对本节点error梯度的贡献  
-        >> `forward()`       计算图运行时本节点所做的操作  
-        >> `backward()`      反向传播error梯度时本节点所做的操作。 和forward一样，继承者都必须实现。  
-
+```python
+`inbound_nodes`   前一层所有节点  
+`outbound_nodes`  后一层所有节点  
+`value`           当前节点计算的值  
+`gradients`       前一层每个节点对本节点error梯度的贡献  
+`forward()`       计算图运行时本节点所做的操作  
+`backward()`      反向传播error梯度时本节点所做的操作。 和forward一样，继承者都必须实现。  
+```
 **Input**:  
     非功能性节点，比如input，label， w, b等。  
         `self.gradients` : 存的自己给下一层所有节点造成的error梯度总和。    
