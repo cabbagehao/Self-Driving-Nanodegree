@@ -44,20 +44,20 @@ self.gradients:
 ```
 **Input**:  
 >> 非功能性节点，比如input，label， w, b等。 
-    ```
+    ```python
         `self.gradients` : 存的自己给下一层所有节点造成的error梯度总和。    
         `forward()` ：  如果传给forward一个参数，它将其存为自己的value，暂时没用到。  
         `backward()`：  从所有下一层节点获取自己给其造成的error梯度，**累加**存入self.gradients[self],梯度更新时用。  
     ```
 **Add/Mul**:  
 >> 执行加法/乘法的节点，仅测试时会用这些简单节点。  
-    ```
+    ```python
         `forward()`：   执行乘法或者加法，存入self.value.  
         `backward()`:   pass. 不需要。  
     ```
 **Linear**:    
 >> 执行线性运算的节点，类似于全连接层节点    
-    ```
+    ```python
         `forward()`:    执行wx+b，存入self.value  
         `backward()`:   对每个输入输入节点都创建一个向量，放到self.gradients字典里  
                         从下一层 **每个节点** 得到自己对其造成的error梯度(grad_cost)：  
@@ -72,7 +72,7 @@ self.gradients:
 
 **Sigmoid**:    
 >> 执行Sigmod函数的节点    
-    ```
+    ```python
         `forward()`:    将输入的值执行sigmod函数，存到self.value.    
         `backward()`:   对每个输入输入节点都创建一个向量，放到self.gradients字典里  
                         从下一层 **每个节点** 得到自己对其造成的grad_cost：  
@@ -81,7 +81,7 @@ self.gradients:
 
 **MSE**:    
 >> 计算mean Error的节点   
-    ```
+    ```python
         `forward()`:    计算y - a， 并对其平方并平均后存入self.value  
         `backward()`:   更新self.gradients中储存的label y和输出层的梯度 (2 / self.m) * self.diff 和 (-2 / self.m) * self.diff， 没太明白。  
     ```
