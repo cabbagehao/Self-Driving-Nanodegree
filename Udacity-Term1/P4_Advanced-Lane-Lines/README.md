@@ -1,6 +1,6 @@
-## Advanced Lane Finding
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-车道线检测项目,实现了更准确的车道线检测. 误判还需要优化,challenge 视频还不能很好地处理.
+## Advanced Lane Finding  
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)  
+车道线检测项目,实现了更准确的车道线检测. 误判还需要优化,challenge 视频还不能很好地处理.  
 ![](./imgs/result.png)
 
 In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
