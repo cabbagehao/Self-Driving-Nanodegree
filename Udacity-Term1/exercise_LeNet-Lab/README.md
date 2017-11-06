@@ -6,7 +6,7 @@ Implement the LeNet-5 deep neural network model.
 
 P2的一个exercise. 熟悉使用LeNet网络去识别手写数字.  
 从mnist里加载数据,并padding到LeNet使用的32*32*C  
-网络结构:  
+### 网络结构:  
     conv1:      28*28*6  
     Activation  
     Pooling:    14*14*6  
