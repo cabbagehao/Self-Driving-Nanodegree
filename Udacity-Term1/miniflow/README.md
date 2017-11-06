@@ -44,11 +44,11 @@ self.gradients:
 ```
 **Input**:  
 >> 非功能性节点，比如input，label， w, b等。 
-    ```python
+```python
         `self.gradients` : 存的自己给下一层所有节点造成的error梯度总和。    
         `forward()` ：  如果传给forward一个参数，它将其存为自己的value，暂时没用到。  
         `backward()`：  从所有下一层节点获取自己给其造成的error梯度，**累加**存入self.gradients[self],梯度更新时用。  
-    ```
+```
 **Add/Mul**:  
 >> 执行加法/乘法的节点，仅测试时会用这些简单节点。  
     ```python
