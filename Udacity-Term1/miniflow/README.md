@@ -33,13 +33,15 @@ self.gradients:
         每个节点获取自己的error梯度时，从自己下一层所有的节点的那个字典里获取加起来就好了。
 
 **Node**:  
-    定义了一个基类`Node`，包含4个变量和2个函数：  
+    * 定义了一个基类`Node`，包含4个变量和2个函数：  
+    <style>blockquote,p{margin-left:2em}
         `inbound_nodes`   前一层所有节点
         `outbound_nodes`  后一层所有节点
         `value`           当前节点计算的值
         `gradients`       前一层每个节点对本节点error梯度的贡献
         `forward()`       计算图运行时本节点所做的操作
         `backward()`      反向传播error梯度时本节点所做的操作。 和forward一样，继承者都必须实现。
+    </style>
 
 **Input**:  
     非功能性节点，比如input，label， w, b等。  
