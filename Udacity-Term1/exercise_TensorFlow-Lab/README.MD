@@ -8,11 +8,11 @@ Parameter configurations:
 Configuration 1  
 * **Epochs:** 1  
 * **Batch Size:**  
-  * 2000          0.116  
-  * 1000          0.186  
-  * 500           0.101  
-  * 300           0.101  
-  * 50            0.666  
+  * 2000<a>          0.116  </a>
+  * 1000<a>          0.186  </a>
+  * 500<a>           0.101  </a>
+  * 300<a>           0.101  </a>
+  * 50<a>            0.666  </a>
 * **Learning Rate:** 0.01   
 
 Configuration 2   
